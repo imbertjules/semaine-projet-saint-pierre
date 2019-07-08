@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Actualités;
+use App\Entity\Actualitees;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Actualités|null find($id, $lockMode = null, $lockVersion = null)
- * @method Actualités|null findOneBy(array $criteria, array $orderBy = null)
- * @method Actualités[]    findAll()
- * @method Actualités[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Actualitees|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Actualitees|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Actualitees[]    findAll()
+ * @method Actualitees[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ActualitésRepository extends ServiceEntityRepository
+class ActualiteesRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Actualités::class);
+        parent::__construct($registry, Actualitees::class);
     }
 
     // /**
-    //  * @return Actualités[] Returns an array of Actualités objects
+    //  * @return Actualitees[] Returns an array of Actualités objects
     //  */
     /*
     public function findByExampleField($value)

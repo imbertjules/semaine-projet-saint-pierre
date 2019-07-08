@@ -13,11 +13,10 @@ class HomeController extends AbstractController
 
     /**
      * @return Response
-     * @Route("/"")
+     * @Route("/")
      */
     public function index(): Response
     {
-        //return new Response('<html><body>Bonjour ! </body></html>');
         return $this->render('index.html.twig');
     }
 
