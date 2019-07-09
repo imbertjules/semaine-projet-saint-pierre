@@ -1,0 +1,3 @@
+blog_list:
+  path:     /admin/envois
+  controller: App\Controller\UtilisateurRepository::envois

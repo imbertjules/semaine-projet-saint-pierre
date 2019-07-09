@@ -4,7 +4,11 @@ namespace App\Repository;
 
 use App\Entity\Utilisateur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use http\Env\Response;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * @method Utilisateur|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +21,23 @@ class UtilisateurRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Utilisateur::class);
+    }
+
+
+    /**
+     *@Route ("/envois",name="envois")
+     */
+    public function mail()
+    {
+        $userEmails=$this->createQueryBuilder('u')
+            ->select('u.mail')
+            ->getQuery()
+            ->getResult();
+        $mails=[];
+        foreach ($userEmails as $userEmail){
+            $mails[] = $userEmails['mail'];
+        }
+        return $this->RedirectToRoute('news_letter');
     }
 
     // /**
