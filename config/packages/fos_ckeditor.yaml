@@ -3,3 +3,10 @@
 twig:
     form_themes:
         - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+fos_ck_editor:
+    input_sync: true
+    default_config: full_config
+    configs:
+        full_config:
+            toolbar:
+                - { name: "styles", items: ['Link', 'Unlink', 'Anchor','Styles', 'Format', 'Font', 'FontSize', 'TextColor', 'BGColor','Bold', 'Italic', 'BulletedList', 'Link','NumberedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl',] }
