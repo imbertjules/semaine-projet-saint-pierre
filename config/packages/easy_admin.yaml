@@ -31,4 +31,9 @@ easy_admin:
             show:
                 fields:
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+    design:
+        menu:
+            - Utilisateur
+            - Actualitees
+            - { label: 'NewsLetter', route: 'news_letter' }
     site_name: The View
