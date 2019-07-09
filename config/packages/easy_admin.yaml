@@ -20,8 +20,15 @@ easy_admin:
                 fields:
                     - lien
                     - titre
-                    - image
+                    - { property: 'imageFile', type: 'file' }
+                    - { property: 'contenu', type: 'fos_ckeditor' }
+            list:
+                fields:
+                    - lien
+                    - titre
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
                     - contenu
-                list:
-                    fields: [lien, titre, image, contenu]
-    site_name: the view
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+    site_name: The View

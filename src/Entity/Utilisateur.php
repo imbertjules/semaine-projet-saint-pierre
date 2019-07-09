@@ -9,6 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ *
  */
 class Utilisateur implements UserInterface
 {
@@ -69,6 +70,11 @@ class Utilisateur implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $prenom;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $pays;
 
     public function getId(): ?int
     {
@@ -230,6 +236,18 @@ class Utilisateur implements UserInterface
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(?string $pays): self
+    {
+        $this->pays = $pays;
 
         return $this;
     }

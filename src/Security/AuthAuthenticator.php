@@ -82,7 +82,7 @@ class AuthAuthenticator extends AbstractFormLoginAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
-            return new RedirectResponse($this->urlGenerator->generate('/admin'));
+            return new RedirectResponse($this->urlGenerator->generate('easyadmin'));
         }
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
